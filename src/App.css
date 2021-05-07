@@ -47,8 +47,14 @@
 .App input {
   width: 40px;
   display: inline;
+  border: 2px solid darkslateblue;
+  border-radius: 3px;
+}
+.App input:focus {
+  outline: none !important;
 }
 .error {
   background-color: palevioletred;
   border: 1px solid darkred ;
 }
+

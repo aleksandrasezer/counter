@@ -1,6 +1,6 @@
-import React, {useEffect} from "react";
+import React from "react";
 import {Button} from "./Button";
-import {Setcounter} from "./Setcounter";
+
 
 type CounterPropsType = {
     num: number
@@ -22,9 +22,11 @@ export function Counter(props: CounterPropsType) {
 
 
             <div className='buttonsContainer'>
+
                 <Button disabled={props.num === props.maxValue}
                         onClick={props.incrementF}
                         title='inc' />
+
                 <Button onClick={props.resetF}
                         disabled={props.num === props.minValue}
                         title='reset'/>

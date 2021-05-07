@@ -1,5 +1,6 @@
-import React, {ChangeEvent, ChangeEventHandler} from "react";
+import React, {ChangeEvent} from "react";
 import {Button} from "./Button";
+import {Input} from "./Input";
 
 type SetcounterPropsType = {
     maxValueChanged: (v: number) => void
@@ -13,9 +14,11 @@ export function Setcounter(props: SetcounterPropsType) {
     const onChangeMaxValueHandler = (e: ChangeEvent<HTMLInputElement>) => {
         props.maxValueChanged(+e.currentTarget.value)
     }
+
     const onChangeMinValueHandler = (e: ChangeEvent<HTMLInputElement>) => {
         props.minValueChanged(+e.currentTarget.value)
     }
+
     const minInputClassName = props.minValue < 0 ? 'error' : ''
     const maxInputClassName = props.maxValue > 10 ? 'error' : ''
 
@@ -24,25 +27,24 @@ export function Setcounter(props: SetcounterPropsType) {
             <div className='number'>
                 <div>
                     <span>max value: </span>
-                    <input className={maxInputClassName}
+                    <Input className={maxInputClassName}
                            type='number'
                            onChange={onChangeMaxValueHandler}
-                           value={props.maxValue}/>
+                           value={props.maxValue} />
                 </div>
+
                 <div>
                     <span>min value: </span>
-                    <input className={minInputClassName}
+                    <Input className={minInputClassName}
                            type='number'
                            onChange={(onChangeMinValueHandler)}
                            value={props.minValue}/>
                 </div>
             </div>
             <div className='buttonsContainer'>
-                <Button disabled={props.minValue < 0 || props.maxValue > 10}
+                <Button disabled={props.minValue < 0 || props.maxValue > 10 || props.maxValue < props.minValue}
                         onClick={props.setValues}
                         title='set'/>
-
-
             </div>
         </div>
     )
