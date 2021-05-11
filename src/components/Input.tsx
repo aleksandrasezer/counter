@@ -2,17 +2,20 @@ import React, {ChangeEvent} from "react";
 
 type InputPropsType = {
     className: string
-    type: string
-    onChange: (e: ChangeEvent<HTMLInputElement>) => void
+    onChange: (n: number) => void
     value: number
 }
 
 export function Input(props: InputPropsType) {
+
+    const onChangeValueHandler = (e: ChangeEvent<HTMLInputElement>) =>
+        props.onChange(+e.currentTarget.value)
+
     return (
         <>
             <input className={props.className}
-                   type={props.type}
-                   onChange={props.onChange}
+                   type='number'
+                   onChange={onChangeValueHandler}
                    value={props.value}/>
         </>
     )

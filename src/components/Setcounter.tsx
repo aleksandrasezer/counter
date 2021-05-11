@@ -1,4 +1,4 @@
-import React, {ChangeEvent} from "react";
+import React from "react";
 import {Button} from "./Button";
 import {Input} from "./Input";
 
@@ -11,13 +11,9 @@ type SetcounterPropsType = {
 }
 
 export function Setcounter(props: SetcounterPropsType) {
-    const onChangeMaxValueHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        props.maxValueChanged(+e.currentTarget.value)
-    }
 
-    const onChangeMinValueHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        props.minValueChanged(+e.currentTarget.value)
-    }
+    const onChangeMaxValueHandler = (n: number) => props.maxValueChanged(n)
+    const onChangeMinValueHandler = (n: number) => props.minValueChanged(n)
 
     const minInputClassName = props.minValue < 0 ? 'error' : ''
     const maxInputClassName = props.maxValue > 10 ? 'error' : ''
@@ -28,7 +24,6 @@ export function Setcounter(props: SetcounterPropsType) {
                 <div>
                     <span>max value: </span>
                     <Input className={maxInputClassName}
-                           type='number'
                            onChange={onChangeMaxValueHandler}
                            value={props.maxValue} />
                 </div>
@@ -36,8 +31,7 @@ export function Setcounter(props: SetcounterPropsType) {
                 <div>
                     <span>min value: </span>
                     <Input className={minInputClassName}
-                           type='number'
-                           onChange={(onChangeMinValueHandler)}
+                           onChange={onChangeMinValueHandler}
                            value={props.minValue}/>
                 </div>
             </div>
