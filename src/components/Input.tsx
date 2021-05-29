@@ -8,8 +8,11 @@ type InputPropsType = {
 
 export function Input(props: InputPropsType) {
 
-    const onChangeValueHandler = (e: ChangeEvent<HTMLInputElement>) =>
-        props.onChange(+e.currentTarget.value)
+    const onChangeValueHandler = (e: ChangeEvent<HTMLInputElement>) => {
+        if (e.currentTarget) {
+            props.onChange(+e.currentTarget.value)
+        }
+    }
 
     return (
         <>

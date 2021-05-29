@@ -1,19 +1,19 @@
 import React from "react";
-import {Button} from "./Button";
-import {Input} from "./Input";
+import {Button} from "../Button";
+import {Input} from "../Input";
 
 type SetcounterPropsType = {
-    maxValueChanged: (v: number) => void
-    minValueChanged: (v: number) => void
+    onChangeMaxVal: (v: number) => void
+    onChangeMinVal: (v: number) => void
     maxValue: number
     minValue: number
-    setValues: () => void
+    setCount: () => void
 }
 
-export function Setcounter(props: SetcounterPropsType) {
+export function SetCounter(props: SetcounterPropsType) {
 
-    const onChangeMaxValueHandler = (n: number) => props.maxValueChanged(n)
-    const onChangeMinValueHandler = (n: number) => props.minValueChanged(n)
+    const onChangeMaxValueHandler = (maxVal: number) => props.onChangeMaxVal(maxVal)
+    const onChangeMinValueHandler = (minVal: number) => props.onChangeMinVal(minVal)
 
     const minInputClassName = props.minValue < 0 ? 'error' : ''
     const maxInputClassName = props.maxValue > 10 ? 'error' : ''
@@ -36,8 +36,8 @@ export function Setcounter(props: SetcounterPropsType) {
                 </div>
             </div>
             <div className='buttonsContainer'>
-                <Button disabled={props.minValue < 0 || props.maxValue > 10 || props.maxValue < props.minValue}
-                        onClick={props.setValues}
+                <Button disabled={props.minValue < 0 || props.maxValue > 100 || props.maxValue < props.minValue}
+                        onClick={props.setCount}
                         title='set'/>
             </div>
         </div>
