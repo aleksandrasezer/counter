@@ -18,25 +18,27 @@ export function SetCounter(props: SetcounterPropsType) {
     const minInputClassName = props.minValue < 0 ? 'error' : ''
     const maxInputClassName = props.maxValue > 10 ? 'error' : ''
 
+    const disabled = props.minValue < 0 || props.maxValue > 10 || props.maxValue < props.minValue
     return (
         <div className='container'>
             <div className='number'>
                 <div>
-                    <span>max value: </span>
                     <Input className={maxInputClassName}
                            onChange={onChangeMaxValueHandler}
-                           value={props.maxValue} />
+                           value={props.maxValue}
+                           limit='max value: '/>
+
                 </div>
 
                 <div>
-                    <span>min value: </span>
                     <Input className={minInputClassName}
                            onChange={onChangeMinValueHandler}
-                           value={props.minValue}/>
+                           value={props.minValue}
+                           limit='min value: '/>
                 </div>
             </div>
             <div className='buttonsContainer'>
-                <Button disabled={props.minValue < 0 || props.maxValue > 100 || props.maxValue < props.minValue}
+                <Button disabled={disabled}
                         onClick={props.setCount}
                         title='set'/>
             </div>

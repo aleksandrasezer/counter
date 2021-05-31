@@ -4,6 +4,7 @@ type InputPropsType = {
     className: string
     onChange: (n: number) => void
     value: number
+    limit: string
 }
 
 export function Input(props: InputPropsType) {
@@ -16,6 +17,7 @@ export function Input(props: InputPropsType) {
 
     return (
         <>
+            <span>{props.limit}</span>
             <input className={props.className}
                    type='number'
                    onChange={onChangeValueHandler}

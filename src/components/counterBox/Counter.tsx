@@ -14,20 +14,24 @@ export function Counter(props: CounterPropsType) {
     const changeColor = () => props.count === props.maxValue ? 'numberRed' : 'number'
     let numToShow = props.minValue < 0 || props.maxValue > 10 ? 'acceptable numbers: 0 to 10' : props.count
 
+    const disabledInc = props.count === props.maxValue
+    const disabledReset = props.count === props.minValue
+
     return (
         <div className='container'>
 
-            <div className={changeColor()}>{numToShow}</div>
-
+            <div className={changeColor()}>
+                {numToShow}
+            </div>
 
             <div className='buttonsContainer'>
 
-                <Button disabled={props.count === props.maxValue}
-                        onClick={props.incrementF}
-                        title='inc' />
+                <Button onClick={props.incrementF}
+                        disabled={disabledInc}
+                        title='inc'/>
 
                 <Button onClick={props.resetF}
-                        disabled={props.count === props.minValue}
+                        disabled={disabledReset}
                         title='reset'/>
 
             </div>
