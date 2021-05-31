@@ -5,7 +5,7 @@ const INCREMENT_COUNT = 'INCREMENT_COUNT'
 const RESET_COUNT = 'RESET_COUNT'
 const SET_COUNT = 'SET_COUNT'
 
-type ActionType = ReturnType<typeof onChangeMaxValueAC> |
+export type ActionType = ReturnType<typeof onChangeMaxValueAC> |
     ReturnType<typeof onChangeMinValueAC> | ReturnType<typeof incrementCountAC> |
     ReturnType<typeof resetCountAC> | ReturnType<typeof setCountAC>
 

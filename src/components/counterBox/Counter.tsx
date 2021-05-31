@@ -11,6 +11,7 @@ type CounterPropsType = {
 }
 
 export function Counter(props: CounterPropsType) {
+
     const changeColor = () => props.count === props.maxValue ? 'numberRed' : 'number'
     let numToShow = props.minValue < 0 || props.maxValue > 10 ? 'acceptable numbers: 0 to 10' : props.count
 

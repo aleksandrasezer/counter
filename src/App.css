@@ -1,35 +1,48 @@
+body {
+  background-image: url('images/unicorn_pug.png');
+}
 .App {
-  margin-top: 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  text-align: center;
+  margin-left: 150px;
+  font-family: "Comic Sans MS", sans-serif;
 }
 .container {
+  margin-top: 100px;
   text-align: center;
-  width: 180px;
+  font-weight: bold;
+  font-size: large;
+  color: white;
+  width: 200px;
   padding: 20px;
-  border: 3px solid darkslateblue;
+  border: 3px solid white;
   border-radius: 10px;
-  background-color: lightblue;
+  background-color: pink;
   display: inline-block;
-  margin-left: 230px;
+  background-image: url('images/cake.png');
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 .button {
-  height: 30px;
-  border-bottom: 3px solid darkslateblue;
-  border-right: 3px solid darkslateblue;
-  border-left: 3px solid cornflowerblue;
-  border-top: 3px solid cornflowerblue;
+  border-bottom: 3px solid peachpuff;
+  border-right: 3px solid peachpuff;
+  border-left: 3px solid white;
+  border-top: 3px solid white;
   border-radius: 10px;
-  margin-top: 20px;
-  padding: 5px;
+  margin-top: 10px;
+  padding: 7px;
+  font-family: "Comic Sans MS", sans-serif;
+  font-weight: bold;
 }
 .button:active {
-  border-top: 3px solid darkslateblue;
-  border-left: 3px solid darkslateblue;
-  border-right: 3px solid cornflowerblue;
-  border-bottom: 3px solid cornflowerblue;
+  border-top: 3px solid peachpuff;
+  border-left: 3px solid peachpuff;
+  border-right: 3px solid white;
+  border-bottom: 3px solid white;
 }
 .buttonsContainer {
   height: 60px;
-  border: 3px solid darkslateblue;
+  border: 3px solid white;
   border-radius: 10px;
   margin-top: 10px;
   padding-top: 10px;
@@ -37,7 +50,7 @@
 }
 .number {
   height: 50px;
-  border: 3px solid darkslateblue;
+  border: 3px solid white;
   border-radius: 10px;
   padding: 20px;
   margin: 0 auto;
@@ -45,7 +58,7 @@
 }
 .numberRed  {
   height: 50px;
-  border: 3px solid darkslateblue;
+  border: 3px solid white;
   border-radius: 5px;
   padding: 20px;
   margin: 0 auto;
@@ -56,7 +69,7 @@
 .App input {
   width: 40px;
   display: inline;
-  border: 3px solid darkslateblue;
+  border: 3px solid peachpuff;
   border-radius: 3px;
 }
 .App input:focus {

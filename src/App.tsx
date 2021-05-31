@@ -1,14 +1,12 @@
 import React from 'react';
 import './App.css';
-import {SetCounterContainer} from "./components/setCounterBox/SetCounterContainer";
-import {CounterContainer} from "./components/counterBox/CounterContainer";
+import {CounterPageContainer} from "./components/counterBox/CounterPageContainer";
 
 function App() {
 
     return (
         <div className="App">
-            <SetCounterContainer/>
-            <CounterContainer/>
+            <CounterPageContainer/>
         </div>
     );
 }
